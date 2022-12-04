@@ -1,7 +1,10 @@
-function App() {
-  return <h1 className="text-3xl">
-      Hello world!
-    </h1>
-}
+import GamePage from "./Game/GamePage";
+import Layout from "./Layout/Layout";
 
-export default App;
+export default function App() {
+  return (
+    <Layout>
+      <GamePage></GamePage>
+    </Layout>
+  )
+}

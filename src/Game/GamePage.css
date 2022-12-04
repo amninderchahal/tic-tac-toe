@@ -1,0 +1,20 @@
+.tile-wrapper {
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.tile-row {
+    display: flex;
+    width: fit-content;
+}
+
+.tile-wrapper .tile-row:not(:first-child) {
+    border-top: 2px solid grey;
+}
+
+.tile-wrapper .tile:not(:first-child) {
+    border-left: 2px solid grey;
+}
