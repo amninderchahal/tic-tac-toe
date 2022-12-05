@@ -1,20 +1,43 @@
-.tile-wrapper {
+.game-wrapper {
+    position: relative;
     margin: auto;
-    padding: 20px;
+    width: fit-content;
+}
+
+.tile-wrapper {
     display: flex;
     flex-direction: column;
     width: fit-content;
 }
 
-.tile-row {
+.tile-row,
+.tile {
     display: flex;
     width: fit-content;
+    position: relative;
 }
 
-.tile-wrapper .tile-row:not(:first-child) {
-    border-top: 2px solid grey;
+.tile button {
+    font-size: 36px;
+    font-weight: 100;
 }
 
-.tile-wrapper .tile:not(:first-child) {
-    border-left: 2px solid grey;
+.tile-row:not(:first-child)::before,
+.tile:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: grey;
+}
+.tile-row:not(:first-child)::before {
+    transform: translateY(-50%);
+    height: 2px;
+    right: 0;
+}
+
+.tile:not(:first-child)::before {
+    width: 2px;
+    transform: translateX(-50%);
+    bottom: 0;
 }

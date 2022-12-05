@@ -1,4 +1,5 @@
 import { PlayerType } from "./player"
+import { Winner } from "./winner";
 
 export type TileValue = PlayerType | null;
 
@@ -13,5 +14,6 @@ export type GameState = TileValue[][]
 
 export type Game = {
     state: GameState,
-    moves: Move[]
+    moves: Move[],
+    winner: Winner | null
 }
