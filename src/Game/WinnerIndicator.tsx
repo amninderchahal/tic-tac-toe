@@ -22,7 +22,7 @@ const linePointsMap: { [posVal in WinnerKeys]: SvgLinePoints } = {
     [WinnerKeys.COL_2]: { x1: 45, y1: 0, x2: 45, y2: 90 },
     [WinnerKeys.COL_3]: { x1: 75, y1: 0, x2: 75, y2: 90 },
     [WinnerKeys.CROSS_TOP_LEFT_TO_BOTTOM_RIGHT]: { x1: 0, y1: 0, x2: 90, y2: 90 },
-    [WinnerKeys.CROSS_BOTTOM_LEFT_TO_TOP_RIGHT]: { x1: 90, y1: 0, x2: 0, y2: 90 },
+    [WinnerKeys.CROSS_BOTTOM_LEFT_TO_TOP_RIGHT]: { x1: 0, y1: 90, x2: 90, y2: 0 },
 }
 
 function getWinnerKeyFromPositions(positions: Position[]): WinnerKeys {
@@ -43,7 +43,7 @@ function getWinnerKeyFromPositions(positions: Position[]): WinnerKeys {
     // Cross winner
     else
     {
-        return startCol === 0
+        return startRow === 0 && startCol === 0
             ? WinnerKeys.CROSS_TOP_LEFT_TO_BOTTOM_RIGHT
             : WinnerKeys.CROSS_BOTTOM_LEFT_TO_TOP_RIGHT;
     }
